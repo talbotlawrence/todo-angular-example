@@ -1,0 +1,32 @@
+index.html:9:	<body ng-app="TodoApp">
+index.html:10:		<div ng-include="'partials/navbar.html'"></div>		
+index.html:12:		<div ng-controller="TodoCtrl">
+index.html:16:					<div class="col-xs-12" ng-view></div>
+
+partials/login.html:4:		<button class="btn btn-info" ng-click="loginGoogle()">Sign In</button>
+partials/login.html:11:				Email: <input type="text" autofocus="true"  ng-model="account.email">
+partials/login.html:14:				Password: <input type="password" ng-model="account.password">
+partials/login.html:17:				<button class="btn btn-info" ng-click="login()">Login</button>
+partials/login.html:19:				<button class="btn btn-default" ng-click="register()">Register</button>
+
+partials/item-list.html:6:<div ng-repeat="item in items | filter: searchText.search">
+partials/item-list.html:10:			<div class="col-xs-7"><a ng-href="#!/items/{{item.id}}">{{item.task}}</a></div>
+partials/item-list.html:13:			<div class="col-xs-1"><button class="btn btn-danger" ng-click="itemDelete(item.id)">X</button></div>
+
+partials/navbar.html:1:<nav class="navbar navbar-default" ng-controller="NavCtrl">
+partials/navbar.html:14:		<div class="col-xs-6 col-xs-offset-3" ng-show="isLoggedIn">
+partials/navbar.html:20:				<input type="text" class="form-control" placeholder="Search for..." ng-model="searchText.search">
+partials/navbar.html:29:				<li ng-show="!isLoggedIn"><a ng-href="#!/login">Login</a></li>
+partials/navbar.html:30:				<li ng-show="isLoggedIn"><a ng-href="#!/items/new">New Item</a></li>
+partials/navbar.html:31:				<li ng-show="isLoggedIn"><a ng-href="#!/items/list">All Items</a></li>
+partials/navbar.html:32:				<li ng-show="isLoggedIn"><a ng-href="#!/logout">Logout</a></li>
+
+partials/item-details.html:12:<button class="btn btn-info"><a ng-href="#!/items/{{selectedItem.id}}/edit">Edit</a></button>
+
+partials/item-form.html:6:		<input type="text" class="form-control" placeholder="Some important task" ng-model="newTask.task" />
+partials/item-form.html:10:		<input type="text" class="form-control" placeholder="01/12/17" ng-model="newTask.dueDate" />
+partials/item-form.html:14:		<input type="text" class="form-control" placeholder="cohort 18" ng-model="newTask.assignedTo" />
+partials/item-form.html:18:		<input type="text" class="form-control" placeholder="attic" ng-model="newTask.location" />
+partials/item-form.html:22:		<input type="text" class="form-control" placeholder="low" ng-model="newTask.urgency" />
+partials/item-form.html:26:		<input type="text" class="form-control" placeholder="brush chipper, monkey chow, the one ring" ng-model="newTask.dependencies" />
+partials/item-form.html:29:	<button class="btn btn-default" ng-click="addNewItem()">{{btnText}}</button>
